@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <title>About</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+
+<header th:insert="blocks/header :: header"></header>
+
+<section class="py-3 text-center container">
+  <div class="row py-lg-5 bg-image" style="background-image: url('https://www.alfaromeousa.com/content/dam/alfausa/BHP/desktop/AR-BHP-HERO-Desktop-gs.jpg');
+            height: 50vh;background-size: 100%; background-repeat: no-repeat;background-position: bottom; ">
+    <div class="col-lg-6 col-md-8 mx-auto text-black">
+      <h1 class="fw-light">About us</h1>
+    </div>
+  </div>
+</section>
+
+<div th:insert="blocks/footer :: footer"></div>
+
+</body>
+<html/>
+
