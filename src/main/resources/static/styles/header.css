@@ -1,8 +1,7 @@
 .hover-underline-animation {
     display: inline-block;
     position: relative;
-    color:
-            #0087ca;
+    color:black;
 }
 
 .hover-underline-animation:after {
@@ -13,8 +12,7 @@
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color:
-            #0087ca;
+    background-color:black;
     transform-origin: bottom right;
     transition: transform 0.25s ease-out;
 }
@@ -28,6 +26,8 @@
     font-size: large;
 }
 
-main{
-    color: red;
+.footer-stick{
+    width: 100%;
+    bottom: 0
 }
+
