@@ -1,4 +1,4 @@
-package com.bobocode.springbootdemo;
+package com.miliancode.carblog;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

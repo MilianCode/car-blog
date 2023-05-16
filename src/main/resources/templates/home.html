@@ -6,6 +6,8 @@
     <link rel="icon" href="https://icoholder.com/files/img/faa4ff4aac7378b8cb83199b235adaef.png">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{/styles/header.css}"/>
+    <link rel="stylesheet" th:href="@{/styles/banner.css}"/>
 </head>
 
 <body>
@@ -14,9 +16,8 @@
 
 <main>
 
-    <section class="py-3 text-center container">
-        <div class="row py-lg-5 bg-image" style="background-image: url('https://cdn.luxe.digital/media/20230105073805/fastest-cars-world-2023-list-ranking-luxe-digital.jpg');
-            height: 50vh;background-size: 100%; background-repeat: no-repeat;background-position: bottom; ">
+    <section class="py-3 text-center container section-banner">
+        <div class="row py-lg-5 bg-image banner" style="background-image: url('https://cdn.luxe.digital/media/20230105073805/fastest-cars-world-2023-list-ranking-luxe-digital.jpg');">
             <div class="col-lg-6 col-md-8 mx-auto text-black">
                 <h1 class="fw-light">News</h1>
                 <p class="lead">Stay up-to-date with the latest news in the world of cars</p>
@@ -53,7 +54,7 @@
 
 </main>
 
-<div th:insert="blocks/footer :: footer"></div>
+<div th:insert="blocks/footer :: footer" class="footer-stick"></div>
 
 </body>
 

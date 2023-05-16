@@ -1,2 +1,4 @@
-package com.miliancode.carblog.repo;public interface UserRepository {
+package com.miliancode.carblog.repo;
+
+public interface UserRepository {
 }

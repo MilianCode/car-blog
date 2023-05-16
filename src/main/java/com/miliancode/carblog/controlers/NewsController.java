@@ -1,8 +1,7 @@
-package com.bobocode.springbootdemo.controlers;
+package com.miliancode.carblog.controlers;
 
-import com.bobocode.springbootdemo.models.News;
-import com.bobocode.springbootdemo.models.Post;
-import com.bobocode.springbootdemo.repo.NewsRepository;
+import com.miliancode.carblog.models.News;
+import com.miliancode.carblog.repo.NewsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

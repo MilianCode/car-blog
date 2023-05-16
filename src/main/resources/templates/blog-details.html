@@ -5,6 +5,7 @@
   <title>Automania - blog</title>
   <link rel="icon" href="https://icoholder.com/files/img/faa4ff4aac7378b8cb83199b235adaef.png">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" th:href="@{/styles/header.css}"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
 </head>
 
@@ -41,7 +42,7 @@
         </form>
       </div>
       <div class="col-auto" style="margin-left: auto">
-        <form th:action="'/blog/' + ${el.id} + '/like'" method="post">
+        <form th:action="'/blog/' + ${el.id} + '/like'" id="myButton" method="post">
           <button class="btn btn-sm btn-outline-danger" type="submit">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
               <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
@@ -55,7 +56,8 @@
 </div>
 
 
-<div th:insert="blocks/footer :: footer"></div>
+
+<div th:insert="blocks/footer :: footer" style="width: 100%; position: absolute; bottom: 0"></div>
 
 </body>
 

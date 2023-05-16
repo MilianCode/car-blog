@@ -1,6 +1,6 @@
-package com.bobocode.springbootdemo.repo;
+package com.miliancode.carblog.repo;
 
-import com.bobocode.springbootdemo.models.Post;
+import com.miliancode.carblog.models.Post;
 import org.springframework.data.repository.CrudRepository;
 
 public interface PostRepository extends CrudRepository<Post, Long> {

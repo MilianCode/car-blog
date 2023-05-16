@@ -1,4 +1,4 @@
-package com.bobocode.springbootdemo.controlers;
+package com.miliancode.carblog.controlers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

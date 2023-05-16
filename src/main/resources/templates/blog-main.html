@@ -5,15 +5,16 @@
   <title>Automania - blog</title>
   <link rel="icon" href="https://icoholder.com/files/img/faa4ff4aac7378b8cb83199b235adaef.png">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" th:href="@{/styles/header.css}"/>
+  <link rel="stylesheet" th:href="@{/styles/banner.css}"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
 </head>
 
 <body>
 <header th:insert="blocks/header :: header"></header>
 
-<section class="py-3 text-center container">
-  <div class="row py-lg-5 bg-image" style="background-image: url('https://www.bugatti.com/fileadmin/_processed_/sei/p1/se-image-d37f5243f6ae21dcfb1fbf28dfe261f5.jpg');
-            height: 50vh;background-size: 100%; background-repeat: no-repeat;background-position: bottom; ">
+<section class="py-3 text-center container section-banner">
+  <div class="row py-lg-5 bg-image banner" style="background-image: url('https://www.bugatti.com/fileadmin/_processed_/sei/p1/se-image-d37f5243f6ae21dcfb1fbf28dfe261f5.jpg');">
     <div class="col-lg-6 col-md-8 mx-auto text-light">
       <h1 class="fw-light">Blog</h1>
       <p class="lead">Here you can find other people's blogs, or even create your own!</p>
@@ -49,7 +50,7 @@
   </div>
 </div>
 
-<div th:insert="blocks/footer :: footer"></div>
+<div th:insert="blocks/footer :: footer" class="footer-stick"></div>
 </body>
 
 </html>

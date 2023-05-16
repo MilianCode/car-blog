@@ -1,4 +1,4 @@
-package com.bobocode.springbootdemo.models;
+package com.miliancode.carblog.models;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

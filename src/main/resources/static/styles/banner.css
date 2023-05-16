@@ -1,0 +1,11 @@
+.section-banner{
+    max-width: 100% !important;
+    height:700px;
+}
+
+.banner{
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
