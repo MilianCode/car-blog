@@ -1,12 +1,15 @@
 package com.miliancode.carblog.models;
 
+
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.Collection;
 
 @Entity
-public class CustomUserDetails {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -16,13 +19,13 @@ public class CustomUserDetails {
     private String password;
     private String dreamCar;
 
-    public CustomUserDetails(String username, String email, String password) {
+    public User(String username, String email, String password) {
         this.username = username;
         this.email = email;
         this.password = password;
     }
 
-    public CustomUserDetails() {
+    public User() {
     }
 
     public Long getId() {
@@ -35,10 +38,6 @@ public class CustomUserDetails {
 
     public String getUsername() {
         return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
     }
 
     public String getPassword() {
@@ -64,4 +63,9 @@ public class CustomUserDetails {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
 }

@@ -1,28 +1,25 @@
-$(document).ready(function(){
-    $('.login-info-box').fadeOut();
-    $('.login-show').addClass('show-log-panel');
-});
-
-$('.login-reg-panel input[type="radio"]').on('change', function() {
-    if($('#log-login-show').is(':checked')) {
-        $('.register-info-box').fadeOut();
-        $('.login-info-box').fadeIn();
-
-        $('.white-panel').addClass('right-log');
-        $('.register-show').addClass('show-log-panel');
-        $('.login-show').removeClass('show-log-panel');
-
+function onChange() {
+    const password = document.querySelector('input[name=password]');
+    const confirm = document.querySelector('input[name=confirm]');
+    if (confirm.value === password.value) {
+        confirm.setCustomValidity('');
+    } else {
+        confirm.setCustomValidity('Passwords do not match');
     }
-    else if($('#log-reg-show').is(':checked')) {
-        $('.register-info-box').fadeIn();
-        $('.login-info-box').fadeOut();
+}
 
-        $('.white-panel').removeClass('right-log');
+const email_error_message = document.querySelector(".error-message")
+if (email_error_message){
 
-        $('.login-show').addClass('show-log-panel');
-        $('.register-show').removeClass('show-log-panel');
+}
+
+
+function myFunction() {
+    var x = document.getElementById("myInput");
+    if (x.type === "password") {
+        x.type = "text";
+    } else {
+        x.type = "password";
     }
-});
-
-
+}
   

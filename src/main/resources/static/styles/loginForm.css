@@ -1,224 +1,163 @@
-
-@import url('https://fonts.googleapis.com/css?family=Mukta');
-body{
-    font-family: 'Mukta', sans-serif;
-    height:100vh;
-    min-height:550px;
-    position:relative;
-    overflow-y: hidden;
-}
-a{
-    text-decoration:none;
-    color:#444444;
-}
-.login-reg-panel{
-    position: relative;
-    top: 35%;
-    transform: translateY(-50%);
-    text-align:center;
-    width:70%;
-    right:0;left:0;
-    margin:auto;
-    height:500px;
-
-}
-.white-panel{
-    /*background-color: rgba(255,255, 255, 1);*/
-    height:400px;
-    position:absolute;
-    top: 50px;
-    max-width: 330px;
-    right:calc(50% - 50px);
-    transition:.3s ease-in-out;
-    z-index:0;
-    box-shadow: 0 0 15px 9px #00000096;
-}
-.login-reg-panel input[type="radio"]{
-    position:relative;
-    display:none;
-}
-.login-reg-panel{
-    color:#B8B8B8;
-}
-.login-reg-panel #label-login,
-.login-reg-panel #label-register{
-    border:1px solid #9E9E9E;
-    padding:5px 5px;
-    width:150px;
-    display:block;
-    text-align:center;
-    border-radius:10px;
-    cursor:pointer;
-    font-weight: 600;
-    font-size: 18px;
-}
-.login-info-box{
-    width:30%;
-    padding:0 50px;
-    top:20%;
-    left:0;
-    position:absolute;
-    text-align:left;
-    color: black;
-}
-.register-info-box{
-    width:30%;
-    padding:0 50px;
-    top:20%;
-    right:0;
-    position:absolute;
-    text-align:left;
-    color: black;
-}
-.right-log{right:50px !important;}
-
-.login-show,
-.register-show{
-    z-index: 1;
-    display:none;
-    opacity:0;
-    transition:0.3s ease-in-out;
-    color:#242424;
-    text-align:left;
-    padding:50px;
-}
-.show-log-panel{
-    display:block;
-    opacity:0.9;
-}
-.login-show input[type="text"], .login-show input[type="password"]{
-    width: 100%;
-    display: block;
-    margin:20px 0;
-    padding: 15px;
-    border: 1px solid #b5b5b5;
-    outline: none;
-}
-.login-show input[type="button"] {
-    max-width: 150px;
-    width: 100%;
-    background: #444444;
-    color: #f9f9f9;
-    border: none;
-    padding: 10px;
-    text-transform: uppercase;
-    border-radius: 2px;
-    float:right;
-    cursor:pointer;
-}
-.login-show a{
-    display:inline-block;
-    padding:10px 0;
-}
-
-.register-show input[type="text"], .register-show input[type="password"]{
-    width: 100%;
-    display: block;
-    margin:20px 0;
-    padding: 15px;
-    border: 1px solid #b5b5b5;
-    outline: none;
-}
-.register-show input[type="button"] {
-    max-width: 150px;
-    width: 100%;
-    background: #444444;
-    color: #f9f9f9;
-    border: none;
-    padding: 10px;
-    text-transform: uppercase;
-    border-radius: 2px;
-    float:right;
-    cursor:pointer;
-}
-.credit {
-    position:absolute;
-    bottom:10px;
-    left:10px;
-    color: #3B3B25;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+*{
     margin: 0;
     padding: 0;
-    font-family: Arial,sans-serif;
-    text-transform: uppercase;
-    font-size: 12px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    z-index: 99;
+    font-family: 'poppins',sans-serif;
 }
-a{
-    text-decoration:none;
-    color:#2c7715;
-}
-
-.login-reg-panel{
-    height: 100%;
-    top:50%;
-}
-
-.white-panel{
-    top:62px;
-}
-
-@media only screen and (max-width: 680px){
-
-    .login-reg-panel{
-        width: 100%;
-        height: 100%;
-        top: 50%;
-    }
-
-    .register-show,
-    .login-show{
-        text-align: center;
-
-    }
-
-    .right-log{
-        right: 50px !important;
-    }
-
-    .white-panel{
-        margin: auto;
-        padding: 10px;
-        width: 80%;
-
-        position: absolute;
-        top: 10%;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .login-info-box,
-    .register-info-box{
-        color: white;
-        position: absolute;
-        width:300px;
-        height:300px;
-        left: 50%;
-        bottom: 0;
-        top:50%;
-        transform: translateX(-50%);
-
-    }
-
-    .login-info-box p,.login-info-box h2,
-    .register-info-box p,.register-info-box h2{
-        display: none;
-    }
-
-    #label-login{
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-}
-.login-wrapper{
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
     width: 100%;
-    height: 100%;
-    background-image: url("https://mainwebstorage.blob.core.windows.net/mediacontainers/styles/1920x1400/azure/2022-08/CC850%20HEADER.jpg?h=722a6ce8&itok=Y4CN8Y5Y");
+
+    background: url('https://sixtysixmag.com/wp-content/uploads/international-automoative-photography-award-winners-2020-sixtysix-magazine.jpg')no-repeat;
     background-position: center;
     background-size: cover;
 }
+.form-box{
+    position: relative;
+    width: 400px;
+    height: 450px;
+    background: transparent;
+    border: 2px solid rgba(255,255,255,0.5);
+    border-radius: 20px;
+    /*backdrop-filter: blur(15px);*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    
+}
+h2{
+    font-size: 2em;
+    color: white;
+    text-align: center;
+}
+.inputbox{
+    position: relative;
+    margin: 30px 0;
+    width: 310px;
+    border-bottom: 2px solid white;
+}
+.inputbox label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 1em;
+    pointer-events: none;
+    transition: .5s;
+}
+
+input:focus ~ label,
+input:not(:placeholder-shown) ~ label{
+    /*top: -5px;*/
+    top: 5px;
+    font-size: 13px;
+}
+
+/*input:focus ~ label,*/
+/*input:valid ~ label{*/
+/*    top: -5px;*/
+/*}*/
+.inputbox input {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    padding:0 35px 0 5px;
+    color: white;
+}
+.inputbox ion-icon{
+    position: absolute;
+    right: 8px;
+    color: white;
+    font-size: 1.2em;
+    top: 20px;
+}
+
+.inputbox .password-checkbox{
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    right: 11px;
+    color: white;
+    font-size: 1.2em;
+    scale: 1.6;
+    top: 20px;
+}
+
+.inputbox .password-checkbox-label{
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    right: 11px;
+    color: white;
+    font-size: 1.2em;
+    top: 20px;
+}
+
+.forget{
+    /*margin: -15px 0 15px;*/
+    margin: -2px 0 5px;
+    font-size: .9em;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+.forget label input{
+    margin-right: 3px;
+
+}
+.forget label a{
+    color: white;
+    text-decoration: none;
+}
+.forget label a:hover{
+    text-decoration: underline;
+}
+button{
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    background: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+}
+.register{
+    font-size: .9em;
+    color: white;
+    text-align: center;
+    margin: 25px 0 10px;
+}
+.register p a{
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+}
+.register p a:hover{
+    text-decoration: underline;
+}
+
+.error-message{
+    max-width: 275px;
+    color: maroon;
+    font-size: 12px;
+    position: absolute;
+    bottom: -42px;
+}
+
+.sent-message{
+    max-width: 275px;
+    color: lawngreen;
+    font-size: 12px;
+    position: absolute;
+    bottom: -42px;
+}

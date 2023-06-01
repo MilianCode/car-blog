@@ -19,6 +19,7 @@ public class NewsController {
     @Autowired
     private NewsRepository newsRepository;
 
+    //Main page with all news
     @GetMapping("/")
     public String blogMain(Model model){
         Iterable<News> news = newsRepository.findAll();
@@ -26,11 +27,13 @@ public class NewsController {
         return "home";
     }
 
+    //Form to add news
     @GetMapping("/news/add")
     public String newsAdd(Model model){
         return "news-add";
     }
 
+    //Adding news to database
     @PostMapping("/news/add")
     public String blogPostAdd(@RequestParam String title,
                               @RequestParam String anons,
@@ -42,6 +45,7 @@ public class NewsController {
         return "redirect:/";
     }
 
+    //Info-page about news
     @GetMapping("/news/{id}")
     public String newsDetails(@PathVariable(value = "id") Long id, Model model){
         if (!newsRepository.existsById(id)) {
@@ -56,6 +60,7 @@ public class NewsController {
         return "news-details";
     }
 
+    //Deleting news from database
     @PostMapping("/news/{id}/remove")
     public String newsDelete(@PathVariable(value = "id") Long id,
                                  Model model){

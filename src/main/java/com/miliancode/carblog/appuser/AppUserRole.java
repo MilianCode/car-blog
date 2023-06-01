@@ -1,2 +1,6 @@
-package com.miliancode.carblog.appuser;public enum AppUserRole {
+package com.miliancode.carblog.appuser;
+
+public enum AppUserRole {
+    USER,
+    ADMIN
 }

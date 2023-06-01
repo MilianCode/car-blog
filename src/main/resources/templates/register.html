@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <title>Log in-Automania</title>
+  <title>Register - DriveNation</title>
   <link rel="icon" href="https://icoholder.com/files/img/faa4ff4aac7378b8cb83199b235adaef.png">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" th:href="@{/styles/header.css}"/>
+  <link rel="stylesheet" th:href="@{/styles/style.css}"/>
   <link rel="stylesheet" th:href="@{/styles/loginForm.css}"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
@@ -16,30 +17,48 @@
 
 <header th:insert="blocks/header :: header"></header>
 
-<div class="login-reg-panel">
-
-  <div class="register-info-box">
-    <h2>Don't have an account?</h2>
-    <p>You can create it in 1 minute!</p>
-    <label id="label-login" for="log-login-show">Register</label>
-    <input type="radio" name="active-log-panel" id="log-login-show">
-  </div>
-
-  <div class="white-panel">
-    <div class="register-show">
-      <h2>REGISTER</h2>
-      <input type="text" placeholder="Email">
-      <input type="text" placeholder="Username">
-      <input type="password" placeholder="Password">
-      <input type="password" placeholder="Confirm Password">
-      <input type="button" value="Register">
+<section>
+  <div class="form-box" style="height: 570px">
+    <div class="form-value">
+      <form action="/register" method="post">
+        <h2>Registration</h2>
+        <div class="inputbox">
+          <ion-icon name="person-outline"></ion-icon>
+          <input name="username" placeholder=" " required>
+          <label>Username</label>
+        </div>
+        <div class="inputbox">
+          <ion-icon name="mail-outline"></ion-icon>
+          <input name="email" type="email"  placeholder=" " required>
+          <label>Email</label>
+        </div>
+        <div class="inputbox">
+          <ion-icon name="lock-closed-outline"></ion-icon>
+          <input name="password" type="password" onChange="onChange()" placeholder=" " minlength="8" maxlength="16" required>
+          <label>Password</label>
+        </div>
+        <div class="inputbox">
+          <ion-icon name="lock-closed-outline"></ion-icon>
+          <input name="confirm"  type="password" onChange="onChange()" placeholder=" " required>
+          <label>Confirm password</label>
+          <div th:if="${sentMail}" class="sent-message">
+            <p th:text="${sentMail}"></p>
+          </div>
+        </div>
+        <button type="submit">Create account</button>
+        <div class="register">
+          <p>Have an account?<a href="/login">Login</a></p>
+        </div>
+      </form>
     </div>
   </div>
-</div>
+</section>
 
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 <script type="text/javascript" th:src="@{/js/loginForm.js}"></script>
 
-<div th:insert="blocks/footer :: footer" style="width: 100%; position: absolute; bottom: 0"></div>
+<div th:insert="blocks/footer :: footer" style="width: 100%; position: absolute"></div>
 
 </body>
 </html>
