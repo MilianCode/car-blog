@@ -2,7 +2,7 @@ package com.miliancode.carblog.controlers;
 
 import com.miliancode.carblog.appuser.AppUser;
 import com.miliancode.carblog.appuser.AppUserRepository;
-import com.miliancode.carblog.dao.UserDAO;
+//import com.miliancode.carblog.dao.UserDAO;
 import com.miliancode.carblog.models.User;
 import com.miliancode.carblog.repo.UserRepository;
 
@@ -25,8 +25,8 @@ public class UserController {
     @Autowired
     private UserRepository userRepository;
 
-    @Autowired
-    private UserDAO userDAO;
+//    @Autowired
+//    private UserDAO userDAO;
 
     @Autowired
     private RegistrationService registrationService;
@@ -70,7 +70,7 @@ public class UserController {
     public String registration() {
         return "register";
     }
-//
+
 //    @PostMapping("/register")
 //    public String processRegistration(@RequestParam String username,
 //                               @RequestParam String email,
@@ -95,7 +95,6 @@ public class UserController {
         RegistrationRequest request = new RegistrationRequest(username, email, password);
         model.addAttribute("sentMail", "Confirmation email was sent");
         registrationService.register(request);
-//        model.addAttribute("sentMail", "Confirmation email was sent to " + email);
 
         return "register";
     }
@@ -129,6 +128,7 @@ public class UserController {
             model.addAttribute("incorrectEmail", "There is no account registered with this email");
             return "recover-password-email";
         }
+
 
         model.addAttribute("sentMail", "Email was sent to " + email);
         return "recover-password-email";
