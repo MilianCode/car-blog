@@ -1,4 +1,4 @@
-package com.miliancode.carblog.controlers;
+package com.miliancode.carblog.controllers;
 
 import com.miliancode.carblog.models.Post;
 import com.miliancode.carblog.repo.PostRepository;
@@ -28,7 +28,7 @@ public class BlogController {
     }
 
     @GetMapping("/blog/add")
-    public String blogAdd(Model model){
+    public String blogAdd(){
         return "blog-add";
     }
 
@@ -36,8 +36,7 @@ public class BlogController {
     public String blogPostAdd(@RequestParam String title,
                               @RequestParam String anons,
                               @RequestParam String fullText,
-                              @RequestParam String nickName,
-                              Model model){
+                              @RequestParam String nickName){
         Post post = new Post(title, anons, fullText, nickName);
         postRepository.save(post);
         return "redirect:/blog";
@@ -74,8 +73,7 @@ public class BlogController {
     public String blogPostUpdate(@PathVariable(value = "id") Long id,
                                  @RequestParam String title,
                                  @RequestParam String anons,
-                                 @RequestParam String fullText,
-                                 Model model){
+                                 @RequestParam String fullText){
         Post post = postRepository.findById(id).orElseThrow();
         post.setTitle(title);
         post.setAnons(anons);
@@ -85,16 +83,14 @@ public class BlogController {
     }
 
     @PostMapping("/blog/{id}/remove")
-    public String blogPostDelete(@PathVariable(value = "id") Long id,
-                                 Model model){
+    public String blogPostDelete(@PathVariable(value = "id") Long id){
         Post post = postRepository.findById(id).orElseThrow();
         postRepository.delete(post);
         return "redirect:/blog";
     }
 
     @PostMapping("/blog/{id}/like")
-    public String blogPostLike(@PathVariable(value = "id") Long id,
-                                 Model model){
+    public String blogPostLike(@PathVariable(value = "id") Long id){
         Post post = postRepository.findById(id).orElseThrow();
         post.setLikes((post.getLikes() + 1));
         postRepository.save(post);

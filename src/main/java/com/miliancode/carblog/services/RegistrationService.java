@@ -1,7 +1,6 @@
 package com.miliancode.carblog.services;
 
 import com.miliancode.carblog.appuser.AppUser;
-import com.miliancode.carblog.appuser.AppUserRepository;
 import com.miliancode.carblog.appuser.AppUserRole;
 import com.miliancode.carblog.appuser.AppUserService;
 import com.miliancode.carblog.emailsender.EmailSender;
@@ -9,7 +8,6 @@ import com.miliancode.carblog.services.token.ConfirmationToken;
 import com.miliancode.carblog.services.token.ConfirmationTokenService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.ui.freemarker.FreeMarkerTemplateUtils;
 
 import javax.transaction.Transactional;
 import java.time.LocalDateTime;
@@ -45,21 +43,20 @@ public class RegistrationService {
         ConfirmationToken confirmationToken = confirmationTokenService
                 .getToken(token)
                 .orElseThrow(() ->
-                        new IllegalStateException("token not found"));
+                        new IllegalStateException("token not found(custom)"));
 
         if (confirmationToken.getConfirmedAt() != null) {
-            throw new IllegalStateException("email already confirmed");
+            throw new IllegalStateException("email already confirmed(custom)");
         }
 
         LocalDateTime expiredAt = confirmationToken.getExpiresAt();
 
         if (expiredAt.isBefore(LocalDateTime.now())) {
-            throw new IllegalStateException("token expired");
+            throw new IllegalStateException("token expired(custom)");
         }
 
         confirmationTokenService.setConfirmedAt(token);
-        appUserService.enableAppUser(
-                confirmationToken.getAppUser().getEmail());
+        appUserService.enableAppUser(confirmationToken.getAppUser().getEmail());
         return "confirmed";
     }
 

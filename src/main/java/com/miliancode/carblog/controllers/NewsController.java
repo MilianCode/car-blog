@@ -1,4 +1,4 @@
-package com.miliancode.carblog.controlers;
+package com.miliancode.carblog.controllers;
 
 import com.miliancode.carblog.models.News;
 import com.miliancode.carblog.repo.NewsRepository;
@@ -19,7 +19,6 @@ public class NewsController {
     @Autowired
     private NewsRepository newsRepository;
 
-    //Main page with all news
     @GetMapping("/")
     public String blogMain(Model model){
         Iterable<News> news = newsRepository.findAll();
@@ -27,25 +26,21 @@ public class NewsController {
         return "home";
     }
 
-    //Form to add news
     @GetMapping("/news/add")
-    public String newsAdd(Model model){
+    public String newsAdd(){
         return "news-add";
     }
 
-    //Adding news to database
     @PostMapping("/news/add")
     public String blogPostAdd(@RequestParam String title,
                               @RequestParam String anons,
                               @RequestParam String fullText,
-                              @RequestParam String imageSrc,
-                              Model model){
+                              @RequestParam String imageSrc){
         News news = new News(title, anons, fullText, imageSrc);
         newsRepository.save(news);
         return "redirect:/";
     }
 
-    //Info-page about news
     @GetMapping("/news/{id}")
     public String newsDetails(@PathVariable(value = "id") Long id, Model model){
         if (!newsRepository.existsById(id)) {
@@ -60,10 +55,8 @@ public class NewsController {
         return "news-details";
     }
 
-    //Deleting news from database
     @PostMapping("/news/{id}/remove")
-    public String newsDelete(@PathVariable(value = "id") Long id,
-                                 Model model){
+    public String newsDelete(@PathVariable(value = "id") Long id){
         News news = newsRepository.findById(id).orElseThrow();
         newsRepository.delete(news);
         return "redirect:/";

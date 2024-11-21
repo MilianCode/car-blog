@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import javax.transaction.Transactional;
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.Optional;
 
 @Repository
@@ -27,4 +28,9 @@ public interface ConfirmationTokenRepository extends JpaRepository<ConfirmationT
     @Query("DELETE FROM ConfirmationToken c " +
             "WHERE c = ?1")
     void deleteToken(Long userId);
+
+    @Transactional
+    @Query("SELECT c.confirmedAt FROM ConfirmationToken c " +
+            "WHERE c.id = ?1")
+    Date getConfirmedAt(Long id);
 }
